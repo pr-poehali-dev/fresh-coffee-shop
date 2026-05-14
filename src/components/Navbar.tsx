@@ -14,12 +14,14 @@ export default function Navbar({ activeSection, onNavigate, cartCount }: NavbarP
     { id: "home", label: "Главная" },
     { id: "catalog", label: "Каталог" },
     { id: "picker", label: "Подбор" },
-    { id: "about", label: "О кофе" },
+    { id: "about", label: "О нас" },
     { id: "roasting", label: "Обжарка" },
     { id: "processing", label: "Обработка" },
     { id: "terroir", label: "Терруар" },
     { id: "contacts", label: "Контакты" },
   ];
+
+  const mobileLinks = [...links, { id: "cart", label: "Корзина" }];
 
   const handleNav = (id: string) => {
     onNavigate(id);
@@ -84,7 +86,7 @@ export default function Navbar({ activeSection, onNavigate, cartCount }: NavbarP
           className="md:hidden px-6 pb-4 flex flex-col gap-4"
           style={{ borderTop: "1px solid rgba(196,122,43,0.15)" }}
         >
-          {links.map((link) => (
+          {mobileLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => handleNav(link.id)}

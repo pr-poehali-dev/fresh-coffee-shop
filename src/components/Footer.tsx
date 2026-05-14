@@ -6,10 +6,11 @@ export default function Footer({ onNavigate }: FooterProps) {
   const links = [
     { id: "home", label: "Главная" },
     { id: "catalog", label: "Каталог" },
-    { id: "about", label: "О кофе" },
+    { id: "about", label: "О нас" },
     { id: "roasting", label: "Обжарка" },
     { id: "subscription", label: "Подписка" },
     { id: "contacts", label: "Контакты" },
+    { id: "cart", label: "Корзина" },
   ];
 
   return (

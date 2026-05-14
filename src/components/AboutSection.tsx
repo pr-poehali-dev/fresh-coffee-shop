@@ -43,7 +43,7 @@ export default function AboutSection() {
               className="section-title text-5xl md:text-6xl font-bold"
               style={{ color: "var(--coffee-cream)" }}
             >
-              О КОФЕ
+              О НАС
             </h2>
             <p className="font-body text-base md:max-w-sm" style={{ color: "rgba(245,230,208,0.5)", lineHeight: 1.6 }}>
               От зерна до чашки — мы контролируем каждый этап на собственном производстве в Москве.
