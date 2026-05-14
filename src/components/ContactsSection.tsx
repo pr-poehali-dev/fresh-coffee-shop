@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
+import BgBeans from "@/components/BgBeans";
 
 type IconName = "MapPin" | "Phone" | "Mail" | "Clock" | "Instagram" | "Send";
 
@@ -19,8 +20,9 @@ export default function ContactsSection() {
   ];
 
   return (
-    <section id="contacts" className="py-24" style={{ background: "rgba(45,26,14,0.4)" }}>
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="contacts" className="py-24" style={{ background: "rgba(45,26,14,0.4)", position: "relative" }}>
+      <BgBeans seed={55} count={12} />
+      <div className="max-w-7xl mx-auto px-6" style={{ position: "relative", zIndex: 1 }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left */}
           <div>

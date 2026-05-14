@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
+import BgBeans from "@/components/BgBeans";
 
 interface Product {
   id: number;
@@ -89,8 +90,9 @@ export default function CatalogSection({ onAddToCart }: CatalogSectionProps) {
   const filtered = filter === "Все" ? products : products.filter((p) => p.roast === filter);
 
   return (
-    <section id="catalog" className="py-24" style={{ background: "var(--coffee-espresso)" }}>
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="catalog" className="py-24" style={{ background: "var(--coffee-espresso)", position: "relative" }}>
+      <BgBeans seed={42} count={16} />
+      <div className="max-w-7xl mx-auto px-6" style={{ position: "relative", zIndex: 1 }}>
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <div className="flex items-center gap-3 mb-4">

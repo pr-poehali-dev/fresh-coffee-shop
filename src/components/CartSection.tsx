@@ -1,4 +1,5 @@
 import Icon from "@/components/ui/icon";
+import BgBeans from "@/components/BgBeans";
 
 interface CartItem {
   id: number;
@@ -21,8 +22,9 @@ export default function CartSection({ items, onUpdateQty, onRemove, onNavigate }
   const isEmpty = items.length === 0;
 
   return (
-    <section id="cart" className="py-24 min-h-screen" style={{ background: "var(--coffee-espresso)" }}>
-      <div className="max-w-4xl mx-auto px-6">
+    <section id="cart" className="py-24 min-h-screen" style={{ background: "var(--coffee-espresso)", position: "relative" }}>
+      <BgBeans seed={33} count={15} />
+      <div className="max-w-4xl mx-auto px-6" style={{ position: "relative", zIndex: 1 }}>
         <div className="flex items-center gap-3 mb-6">
           <div className="h-px w-8" style={{ background: "var(--coffee-amber)" }} />
           <span className="tag-roast">Ваш выбор</span>

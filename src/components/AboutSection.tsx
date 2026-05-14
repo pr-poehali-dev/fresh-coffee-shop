@@ -1,3 +1,5 @@
+import BgBeans from "@/components/BgBeans";
+
 export default function AboutSection() {
   const facts = [
     {
@@ -27,8 +29,9 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-24" style={{ background: "rgba(45,26,14,0.5)" }}>
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="about" className="py-24" style={{ background: "rgba(45,26,14,0.5)", position: "relative" }}>
+      <BgBeans seed={77} count={14} />
+      <div className="max-w-7xl mx-auto px-6" style={{ position: "relative", zIndex: 1 }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left */}
           <div>

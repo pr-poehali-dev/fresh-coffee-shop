@@ -1,3 +1,5 @@
+import BgBeans from "@/components/BgBeans";
+
 export default function RoastingSection() {
   const steps = [
     {
@@ -27,8 +29,9 @@ export default function RoastingSection() {
   ];
 
   return (
-    <section id="roasting" className="py-24" style={{ background: "var(--coffee-espresso)" }}>
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="roasting" className="py-24" style={{ background: "var(--coffee-espresso)", position: "relative" }}>
+      <BgBeans seed={13} count={18} />
+      <div className="max-w-7xl mx-auto px-6" style={{ position: "relative", zIndex: 1 }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left image */}
           <div className="lg:sticky lg:top-24">

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
+import BgBeans from "@/components/BgBeans";
 
 const plans = [
   {
@@ -77,9 +78,10 @@ export default function SubscriptionSection() {
     <section
       id="subscription"
       className="py-24"
-      style={{ background: "rgba(20,10,4,0.98)" }}
+      style={{ background: "rgba(20,10,4,0.98)", position: "relative" }}
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <BgBeans seed={99} count={20} />
+      <div className="max-w-7xl mx-auto px-6" style={{ position: "relative", zIndex: 1 }}>
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="h-px w-12" style={{ background: "var(--coffee-amber)" }} />
