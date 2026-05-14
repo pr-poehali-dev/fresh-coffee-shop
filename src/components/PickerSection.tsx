@@ -4,9 +4,11 @@ import BgBeans from "@/components/BgBeans";
 
 const METHODS = [
   { id: "espresso", label: "Эспрессо", icon: "☕", hint: "Концентрированный, насыщенный" },
-  { id: "pour-over", label: "Пуровер", icon: "🫗", hint: "Фильтр, чистый вкус" },
+  { id: "pour-over", label: "Пуровер / V60", icon: "🫗", hint: "Фильтр, чистый вкус" },
   { id: "french-press", label: "Френч-пресс", icon: "🧊", hint: "Плотный, с телом" },
   { id: "aeropress", label: "Аэропресс", icon: "💧", hint: "Мягкий, универсальный" },
+  { id: "drip", label: "Воронка / Дрип", icon: "🔽", hint: "Медленная заливка" },
+  { id: "cup", label: "Каппинг / Чашка", icon: "🍵", hint: "Прямое заваривание" },
   { id: "cold-brew", label: "Колд-брю", icon: "🧃", hint: "Холодное заваривание" },
   { id: "turk", label: "Турка", icon: "🔥", hint: "Традиционный, крепкий" },
 ];
@@ -100,7 +102,16 @@ function getRecommendation(method: string, taste: Record<string, number>): Resul
       why: "Идеальный баланс для эспрессо — тело, сладость и минимальная горечь.",
     });
   }
-  if ((method === "pour-over" || method === "aeropress") && acidity < 3) {
+  if (method === "drip" || method === "cup") {
+    results.unshift({
+      name: "Эфиопия Иргачефф",
+      origin: "Эфиопия",
+      roast: "Лёгкая",
+      notes: ["Жасмин", "Черника", "Цитрус"],
+      why: "Воронка и каппинг раскрывают деликатные цветочные и ягодные ноты эфиопского кофе.",
+    });
+  }
+  if ((method === "pour-over" || method === "aeropress" || method === "drip") && acidity < 3) {
     results.unshift({
       name: "Гватемала Антигуа",
       origin: "Гватемала",
@@ -222,7 +233,7 @@ export default function PickerSection() {
             <h3 className="font-display text-2xl font-semibold text-center mb-8" style={{ color: "var(--coffee-cream)" }}>
               Как вы готовите кофе?
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {METHODS.map((m) => (
                 <button
                   key={m.id}

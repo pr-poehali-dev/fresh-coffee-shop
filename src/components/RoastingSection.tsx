@@ -129,6 +129,79 @@ export default function RoastingSection() {
                 </div>
               ))}
             </div>
+
+            {/* Блок обработки ягоды */}
+            <div className="mt-14">
+              <div className="divider-coffee mb-10" />
+              <div className="flex items-center gap-3 mb-6">
+                <div className="h-px w-8" style={{ background: "var(--coffee-amber)" }} />
+                <span className="tag-roast">Обработка ягоды</span>
+              </div>
+              <h3 className="font-display text-2xl font-bold mb-4" style={{ color: "var(--coffee-cream)" }}>
+                От ягоды к зерну
+              </h3>
+              <p className="font-body mb-8" style={{ color: "rgba(245,230,208,0.55)", lineHeight: 1.7 }}>
+                Кофейная ягода — это плод, внутри которого находятся два зерна. Способ удаления
+                мякоти и ферментации кардинально влияет на вкус в чашке. Мы работаем
+                со всеми тремя основными методами обработки.
+              </p>
+              <div className="flex flex-col gap-4">
+                {[
+                  {
+                    tag: "Мытая (Washed)",
+                    color: "#4a9eff",
+                    icon: "💧",
+                    desc: "Мякоть удаляется механически, зёрна ферментируются в воде 24–72 часа, затем промываются и сушатся. Даёт чистый, яркий, кислотный вкус — хорошо передаёт терруар.",
+                    examples: "Эфиопия Иргачефф, Кения АА",
+                  },
+                  {
+                    tag: "Натуральная (Natural)",
+                    color: "#e8941a",
+                    icon: "☀️",
+                    desc: "Ягода сушится целиком на солнце 3–6 недель. Мякоть отдаёт зёрнам сахар и фруктовость. Результат — насыщенный, ягодный, винный вкус с плотным телом.",
+                    examples: "Эфиопия (натур.), Йемен Мокко",
+                  },
+                  {
+                    tag: "Хани (Honey)",
+                    color: "#d4923a",
+                    icon: "🍯",
+                    desc: "Часть мякоти остаётся на зерне во время сушки. Промежуточный метод: больше сладости и тела, чем у мытой, но чище, чем натуральная. Делится на Yellow, Red и Black honey.",
+                    examples: "Гватемала, Коста-Рика",
+                  },
+                  {
+                    tag: "Анаэробная (Anaerobic)",
+                    color: "#b06040",
+                    icon: "🔬",
+                    desc: "Ягоды или зёрна ферментируются в герметичных баках без доступа кислорода. Экспериментальный метод — даёт уникальные, интенсивные, иногда тропические ноты.",
+                    examples: "Колумбия, Эфиопия (спешелти)",
+                  },
+                ].map((p) => (
+                  <div
+                    key={p.tag}
+                    className="rounded-sm p-5 flex gap-4"
+                    style={{ background: "rgba(45,26,14,0.6)", border: "1px solid rgba(196,122,43,0.15)" }}
+                  >
+                    <div className="text-2xl flex-shrink-0 mt-0.5">{p.icon}</div>
+                    <div>
+                      <div className="flex items-center gap-2 mb-2">
+                        <span
+                          className="font-display text-xs tracking-wider uppercase px-2 py-0.5 rounded-sm"
+                          style={{ background: `${p.color}22`, color: p.color, border: `1px solid ${p.color}44` }}
+                        >
+                          {p.tag}
+                        </span>
+                      </div>
+                      <p className="font-body text-sm mb-2" style={{ color: "rgba(245,230,208,0.6)", lineHeight: 1.6 }}>
+                        {p.desc}
+                      </p>
+                      <p className="font-body text-xs" style={{ color: "rgba(245,230,208,0.3)" }}>
+                        Примеры: {p.examples}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
