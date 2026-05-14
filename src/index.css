@@ -64,6 +64,41 @@
     font-family: "Golos Text", sans-serif;
     background-color: var(--coffee-espresso);
     color: var(--coffee-cream);
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-color: var(--coffee-espresso);
+    background-image:
+      /* Радиальный градиент — тёплое пятно справа сверху */
+      radial-gradient(
+        ellipse 60% 50% at 85% 10%,
+        rgba(180, 100, 30, 0.18) 0%,
+        transparent 70%
+      ),
+      /* Тёплое пятно слева снизу */
+        radial-gradient(
+          ellipse 50% 40% at 10% 85%,
+          rgba(120, 60, 15, 0.2) 0%,
+          transparent 70%
+        ),
+      /* SVG паттерн: кофейные зёрна и листья */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cg opacity='0.07' fill='%23d4923a'%3E%3C!-- Кофейное зерно 1 --%3E%3Cellipse cx='40' cy='40' rx='12' ry='18' transform='rotate(-30 40 40)'/%3E%3Cline x1='40' y1='22' x2='40' y2='58' stroke='%233a2318' stroke-width='1.5' transform='rotate(-30 40 40)'/%3E%3C!-- Лист 1 --%3E%3Cpath d='M110 20 Q130 40 110 60 Q90 40 110 20Z'/%3E%3Cline x1='110' y1='20' x2='110' y2='60' stroke='%233a2318' stroke-width='1' opacity='0.5'/%3E%3Cline x1='110' y1='35' x2='120' y2='30' stroke='%233a2318' stroke-width='0.7' opacity='0.4'/%3E%3Cline x1='110' y1='42' x2='120' y2='45' stroke='%233a2318' stroke-width='0.7' opacity='0.4'/%3E%3C!-- Кофейное зерно 2 --%3E%3Cellipse cx='170' cy='90' rx='10' ry='16' transform='rotate(20 170 90)'/%3E%3Cline x1='170' y1='74' x2='170' y2='106' stroke='%233a2318' stroke-width='1.5' transform='rotate(20 170 90)'/%3E%3C!-- Лист 2 (маленький) --%3E%3Cpath d='M60 130 Q75 148 60 165 Q45 148 60 130Z'/%3E%3Cline x1='60' y1='130' x2='60' y2='165' stroke='%233a2318' stroke-width='0.8' opacity='0.4'/%3E%3C!-- Кофейное зерно 3 (маленькое) --%3E%3Cellipse cx='155' cy='175' rx='7' ry='11' transform='rotate(45 155 175)'/%3E%3Cline x1='155' y1='164' x2='155' y2='186' stroke='%233a2318' stroke-width='1' transform='rotate(45 155 175)'/%3E%3C!-- Точки — ягоды кофе --%3E%3Ccircle cx='90' cy='100' r='4'/%3E%3Ccircle cx='98' cy='108' r='3'/%3E%3Ccircle cx='85' cy='110' r='3'/%3E%3C!-- Веточка --%3E%3Cpath d='M190 150 Q200 140 210 145' stroke='%23d4923a' stroke-width='1.5' fill='none' opacity='0.07'/%3E%3Cpath d='M200 140 Q205 130 212 132' stroke='%23d4923a' stroke-width='1' fill='none' opacity='0.07'/%3E%3C/g%3E%3C/svg%3E");
+    background-size:
+      auto,
+      auto,
+      220px 220px;
+    background-repeat: no-repeat, no-repeat, repeat;
+  }
+
+  body > #root {
+    position: relative;
+    z-index: 1;
   }
 
   h1,
