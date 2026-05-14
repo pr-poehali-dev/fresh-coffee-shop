@@ -13,6 +13,7 @@ export default function Navbar({ activeSection, onNavigate, cartCount }: NavbarP
   const links = [
     { id: "home", label: "Главная" },
     { id: "catalog", label: "Каталог" },
+    { id: "picker", label: "Подбор" },
     { id: "about", label: "О кофе" },
     { id: "roasting", label: "Обжарка" },
     { id: "contacts", label: "Контакты" },

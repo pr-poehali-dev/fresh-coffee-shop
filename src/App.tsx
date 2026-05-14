@@ -8,6 +8,7 @@ import RoastingSection from "@/components/RoastingSection";
 import SubscriptionSection from "@/components/SubscriptionSection";
 import ContactsSection from "@/components/ContactsSection";
 import CartSection from "@/components/CartSection";
+import PickerSection from "@/components/PickerSection";
 import Footer from "@/components/Footer";
 
 interface CartItem {
@@ -58,6 +59,8 @@ const App = () => {
     switch (activeSection) {
       case "catalog":
         return <CatalogSection onAddToCart={addToCart} />;
+      case "picker":
+        return <PickerSection />;
       case "about":
         return <AboutSection />;
       case "roasting":
