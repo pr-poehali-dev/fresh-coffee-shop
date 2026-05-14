@@ -32,19 +32,29 @@ export default function AboutSection() {
     <section id="about" className="py-24" style={{ background: "rgba(45,26,14,0.5)", position: "relative" }}>
       <BgBeans seed={77} count={14} />
       <div className="max-w-7xl mx-auto px-6" style={{ position: "relative", zIndex: 1 }}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left */}
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-px w-8" style={{ background: "var(--coffee-amber)" }} />
-              <span className="tag-roast">Наша философия</span>
-            </div>
+        {/* Заголовок вверху на всю ширину */}
+        <div className="mb-12">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="h-px w-8" style={{ background: "var(--coffee-amber)" }} />
+            <span className="tag-roast">Наша философия</span>
+          </div>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <h2
-              className="section-title text-5xl md:text-6xl font-bold mb-6"
+              className="section-title text-5xl md:text-6xl font-bold"
               style={{ color: "var(--coffee-cream)" }}
             >
               О КОФЕ
             </h2>
+            <p className="font-body text-base md:max-w-sm" style={{ color: "rgba(245,230,208,0.5)", lineHeight: 1.6 }}>
+              От зерна до чашки — мы контролируем каждый этап на собственном производстве в Москве.
+            </p>
+          </div>
+          <div className="divider-coffee mt-8" />
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          {/* Left */}
+          <div>
             <p
               className="font-body text-lg mb-6"
               style={{ color: "rgba(245,230,208,0.65)", lineHeight: 1.8 }}
@@ -53,11 +63,19 @@ export default function AboutSection() {
               рук, которые их собирали, и мастерства обжарщика.
             </p>
             <p
-              className="font-body text-lg mb-10"
+              className="font-body text-lg mb-6"
               style={{ color: "rgba(245,230,208,0.65)", lineHeight: 1.8 }}
             >
               Мы работаем напрямую с фермерами, поддерживая справедливую торговлю
               и экологичное производство. Каждый пакет — это осознанный выбор.
+            </p>
+            <p
+              className="font-body text-lg mb-10"
+              style={{ color: "rgba(245,230,208,0.65)", lineHeight: 1.8 }}
+            >
+              Наша обжарочная находится в Москве — современное оборудование, строгий контроль
+              профилей и еженедельные каппинги. Каждая партия обжаривается малыми тиражами
+              и отправляется клиентам в день обжарки, чтобы вы ощутили кофе на пике вкуса.
             </p>
 
             <div
