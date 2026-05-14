@@ -16,6 +16,8 @@ export default function Navbar({ activeSection, onNavigate, cartCount }: NavbarP
     { id: "picker", label: "Подбор" },
     { id: "about", label: "О кофе" },
     { id: "roasting", label: "Обжарка" },
+    { id: "processing", label: "Обработка" },
+    { id: "terroir", label: "Терруар" },
     { id: "contacts", label: "Контакты" },
   ];
 

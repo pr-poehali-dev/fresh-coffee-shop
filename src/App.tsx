@@ -9,6 +9,8 @@ import SubscriptionSection from "@/components/SubscriptionSection";
 import ContactsSection from "@/components/ContactsSection";
 import CartSection from "@/components/CartSection";
 import PickerSection from "@/components/PickerSection";
+import ProcessingSection from "@/components/ProcessingSection";
+import TerroirSection from "@/components/TerroirSection";
 import Footer from "@/components/Footer";
 
 interface CartItem {
@@ -65,6 +67,10 @@ const App = () => {
         return <AboutSection />;
       case "roasting":
         return <RoastingSection />;
+      case "processing":
+        return <ProcessingSection />;
+      case "terroir":
+        return <TerroirSection />;
       case "subscription":
         return <SubscriptionSection />;
       case "contacts":
